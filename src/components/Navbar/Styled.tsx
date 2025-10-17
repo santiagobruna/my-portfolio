@@ -7,7 +7,7 @@ export const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: ${variables.colorHeader};
+    background-color: #4b2c2c;
     font-family:  'Nunito', sans-serif;
     overflow: visible; 
 `;

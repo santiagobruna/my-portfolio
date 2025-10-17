@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ProfileImage } from "../Apresentation/Styled";
+import variables from "../../style/Variables";
 
 export const Container = styled.section`
     display: flex;
@@ -50,7 +51,7 @@ export const Info = styled.div`
 `;
 
 export const Button = styled.a`
-    background-color: #e95757;
+    background-color: ${variables.colorHeader};
     color: #fff;
     border: none;
     padding: 0.9rem 2rem;
