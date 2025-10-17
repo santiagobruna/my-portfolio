@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-    background-color: #4b2c2c;
+    background-color: #fff;
     padding: 4rem 2rem;
-    color: #fff;
+    color: black;
 `;
 
 export const Title = styled.h2`
@@ -18,6 +18,7 @@ export const ProjectsGrid = styled.div`
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
+    
 `;
 
 export const ProjectCard = styled.div`
@@ -27,7 +28,7 @@ export const ProjectCard = styled.div`
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
     transition: transform 0.2s;
 
     &:hover {
