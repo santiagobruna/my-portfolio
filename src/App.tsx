@@ -1,3 +1,5 @@
+import AboutSection from "./components/AboutSection/index.tsx";
+import HeroSection from "./components/Apresentation/index.tsx";
 import Navbar from "./components/Navbar";
 import { GlobalStyle } from './style/GlobalStyle.ts'
 
@@ -6,6 +8,8 @@ export default function App() {
     <>
       <GlobalStyle/>
       <Navbar/>
+      <HeroSection/>
+      <AboutSection/>
     </>
   );
 }
