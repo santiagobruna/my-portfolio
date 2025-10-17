@@ -24,16 +24,16 @@ export default function Navbar() {
                     <S.MenuLink href="#about" onClick={closeMenu}>Sobre</S.MenuLink>
                 </S.MenuItem>
                 <S.MenuItem>
-                    <S.MenuLink href="#projects" onClick={closeMenu}>Projetos</S.MenuLink>
-                </S.MenuItem>
-                <S.MenuItem>
                     <S.MenuLink href="#skills" onClick={closeMenu}>Habilidades</S.MenuLink>
                 </S.MenuItem>
                 <S.MenuItem>
-                    <S.MenuLink href="#contact" onClick={closeMenu}>Contatos</S.MenuLink>
+                    <S.MenuLink href="#services" onClick={closeMenu}>Serviços</S.MenuLink>
                 </S.MenuItem>
                 <S.MenuItem>
-                    <S.MenuLink href="#contact" onClick={closeMenu}>Serviços</S.MenuLink>
+                    <S.MenuLink href="#projects" onClick={closeMenu}>Projetos</S.MenuLink>
+                </S.MenuItem>
+                <S.MenuItem>
+                    <S.MenuLink href="#contact" onClick={closeMenu}>Contato</S.MenuLink>
                 </S.MenuItem>
             </S.Menu>
         </S.Nav>
