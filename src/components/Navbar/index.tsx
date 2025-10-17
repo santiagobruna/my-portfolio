@@ -27,7 +27,7 @@ export default function Navbar() {
                     <S.MenuLink href="#projects" onClick={closeMenu}>Projetos</S.MenuLink>
                 </S.MenuItem>
                 <S.MenuItem>
-                    <S.MenuLink href="#about" onClick={closeMenu}>Habilidades</S.MenuLink>
+                    <S.MenuLink href="#skills" onClick={closeMenu}>Habilidades</S.MenuLink>
                 </S.MenuItem>
                 <S.MenuItem>
                     <S.MenuLink href="#contact" onClick={closeMenu}>Contatos</S.MenuLink>
