@@ -1,6 +1,7 @@
 import AboutSection from "./components/AboutSection/index.tsx";
 import HeroSection from "./components/Apresentation/index.tsx";
 import Navbar from "./components/Navbar";
+import Projects from "./components/Projects/index.tsx";
 import Skills from "./components/Skills/index.tsx";
 import { GlobalStyle } from './style/GlobalStyle.ts'
 
@@ -12,6 +13,7 @@ export default function App() {
       <HeroSection/>
       <AboutSection/>
       <Skills/>
+      <Projects/>
     </>
   );
 }
