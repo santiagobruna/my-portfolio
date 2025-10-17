@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import variables from "../../style/Variables";
 
 export const Nav = styled.nav`
     width: 100%;
@@ -6,7 +7,7 @@ export const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:#C37670;
+    background-color: ${variables.colorHeader};
     font-family:  'Nunito', sans-serif;
     overflow: visible; 
 `;
@@ -44,7 +45,7 @@ export const Menu = styled.ul<{ open: boolean }>`
         position: absolute;
         top: 60px;
         right: 1rem;
-        background-color: #C37670;
+        background-color: ${variables.colorHeader};
         border-radius: 8px;
         padding: 1rem 1.5rem;
         box-shadow: 0 4px 10px rgba(0,0,0,0.15);

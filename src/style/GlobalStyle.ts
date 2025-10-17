@@ -7,6 +7,10 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        font-family: "Lato", sans-serif;
+        /* font-family: "Lato", sans-serif; */
+        font-family:  'Nunito', sans-serif;
+    }
+    html{
+        scroll-behavior: smooth;
     }
 `

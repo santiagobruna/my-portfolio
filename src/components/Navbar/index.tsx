@@ -33,7 +33,7 @@ export default function Navbar() {
                     <S.MenuLink href="#contact" onClick={closeMenu}>Contatos</S.MenuLink>
                 </S.MenuItem>
                 <S.MenuItem>
-                    <S.MenuLink href="#contact" onClick={closeMenu}>Contatos</S.MenuLink>
+                    <S.MenuLink href="#contact" onClick={closeMenu}>Serviços</S.MenuLink>
                 </S.MenuItem>
             </S.Menu>
         </S.Nav>

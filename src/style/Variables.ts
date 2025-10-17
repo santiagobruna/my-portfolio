@@ -5,5 +5,6 @@ const variables = {
     primaryColor: "#E1E1E1",
     secondaryColor: "#E1E1E1",
     backgroundFooter: " #E1DFD4",
+    backgroundSectionSecond: "#fff",
 }
 export default variables
