@@ -14,8 +14,8 @@ const projectData = [
         "Um site criado especialmente para pediatras que desejam destacar sua carreira, gerar confiança em seus pacientes e facilitar o contato profissional com um visual moderno e responsivo.",
         technologies: ["React", "Tailwind CSS", "TypeScript", "React", "Styled Component"],
         image: "/portfolio-pediatra.png",
-        demo: "https://seuprojeto.com/pediatra",
-        repo: "https://github.com/seuusuario/pediatra",
+        demo: "https://portfolio-julia-two.vercel.app/",
+        repo: "https://github.com/santiagobruna/portfolio-julia",
     },
     {
         title: "Gerenciador de tarefas inteligentes",
