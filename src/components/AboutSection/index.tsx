@@ -27,12 +27,9 @@ const AboutSection: React.FC = () => {
 
         <S.Info>
             <h1>Bruna Carla Ribeiro Santiago de Oliveira</h1>
-            <h3>Desenvolvedora Front-End</h3>
+            <h3>Desenvolvedora Front-End - 21 anos</h3>
             <p>
-            Sou apaixonada por criar experiências digitais únicas e funcionais.
-            Tenho habilidades sólidas em HTML, CSS, JavaScript e frameworks modernos como React.
-            Gosto de transformar ideias em interfaces atraentes, sempre com foco na
-            experiência do usuário.
+            Atuo no suporte e desenvolvimento de projetos na <strong>Tardis Tecnologia</strong>, participando diretamente da manutenção, evolução e correção de sistemas em produção. Trabalho com React, Next.js e React Native, desenvolvendo interfaces modernas, funcionais e focadas na experiência do usuário.
             </p>
             <p>
             Atualmente, estou em formação Full Stack e busco constantemente aprimorar minhas
@@ -45,7 +42,7 @@ const AboutSection: React.FC = () => {
             rel="noopener noreferrer"
             id="whatsapp-link"
             >ENTRAR EM CONTATO</S.Button>
-            <S.Button href="/cv-geral.docx.pdf" 
+            <S.Button href="/cv-fullstack.docx.pdf" 
             target="_blank"
             download
             rel="noopener noreferrer"
