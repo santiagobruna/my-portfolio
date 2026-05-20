@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import variables from "../../style/Variables";
 
 export const Container = styled.section`
@@ -47,31 +48,28 @@ export const ViewAllLink = styled.a`
 
 export const Carousel = styled.div`
   position: relative;
-  overflow: hidden;
   width: 100%;
   padding: 0.5rem 0;
 `;
 
-export const Track = styled.div<{ $offset: number }>`
-  display: flex;
+export const Track = styled(motion.div)`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  align-items: stretch;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateX(${({ $offset }) => $offset}px);
-`;
-
-export const CardSlot = styled.div`
-  flex: 0 0 calc((100% - 3rem) / 3);
-  min-width: 0;
-  display: flex;
+  width: 100%;
 
   @media (max-width: 900px) {
-    flex: 0 0 calc((100% - 1.5rem) / 2);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: 600px) {
-    flex: 0 0 100%;
+    grid-template-columns: 1fr;
   }
+`;
+
+export const CardSlot = styled.div`
+  min-width: 0;
+  display: flex;
 `;
 
 export const ProjectCard = styled.article`
@@ -94,12 +92,14 @@ export const ImageWrapper = styled.div`
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  width: 100%;
 `;
 
 export const Thumbnail = styled.img`
   width: 100%;
   height: 180px;
   object-fit: cover;
+  object-position: top center;
   display: block;
   transition: transform 0.4s ease;
 
@@ -136,22 +136,25 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  min-height: 140px;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 export const ProjectTitle = styled.h3`
   font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem;
   color: ${variables.textPrimary};
+  width: 100%;
 `;
 
 export const Description = styled.p`
   font-size: 0.85rem;
   line-height: 1.5;
   color: ${variables.textSecondary};
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
   flex: 1;
+  width: 100%;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -163,6 +166,7 @@ export const TechList = styled.div`
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-top: auto;
+  width: 100%;
 `;
 
 export const Tech = styled.span`
