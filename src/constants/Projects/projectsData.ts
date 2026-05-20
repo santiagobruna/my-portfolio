@@ -18,13 +18,13 @@ const projectData = [
         repo: "https://github.com/santiagobruna/portfolio-julia",
     },
     {
-        title: "Gerenciador de tarefas inteligentes",
+        title: "E-commerce de Jogos Digitais",
         description:
-        "Aplicação construída com React, focada em praticar o uso de estados, props e implementar lógica de filtros dinâmicos, proporcionando uma experiência de interação eficiente e intuitiva.",
+        "O eplay é um e-commerce front-end focado em jogos digitais. Aqui, o usuário pode navegar por categorias variadas de jogos como promoções, lançamentos, ação, RPG e muito mais além de conferir os detalhes de cada jogo individualmente.",
         technologies: ["TypeScript", "React", "Redux", "Router", "Styled Component"],
-        image: "/lista-tarefas.png",
-        demo: "https://minhas-tarefas-two-gules.vercel.app/",
-        repo: "https://github.com/santiagobruna/minhas-tarefas",
+        image: "/eplay.png",
+        demo: "https://eplay-tan.vercel.app/",
+        repo: "https://github.com/santiagobruna/eplay",
     },
     {
         title: "PetDev",

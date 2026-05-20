@@ -1,77 +1,65 @@
 import styled from "styled-components";
-import { ProfileImage } from "../Apresentation/Styled";
 import variables from "../../style/Variables";
 
-export const Container = styled.section`
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+export const Wrapper = styled.section`
+  width: 100%;
+  padding: 6rem 0;
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
+`;
+
+export const Inner = styled.div`
+  width: 100%;
+  max-width: ${variables.maxWidth};
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1.25rem;
+  }
+`;
+
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
     gap: 3rem;
-    background-color: #4b2c2c; 
-    color: #fff;
-    padding: 4rem 6rem;
-    flex-wrap: wrap;
-    min-height: 100vh;
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-        padding: 2rem;
-    }
+  }
 `;
 
-export const Image = styled(ProfileImage)`
-    box-shadow: none;
+export const AboutContent = styled.div``;
+
+export const AboutText = styled.p`
+  font-size: 1rem;
+  line-height: 1.8;
+  color: ${variables.textSecondary};
+  margin-bottom: 1.5rem;
 `;
 
-export const Info = styled.div`
-    max-width: 600px;
+export const AboutButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: ${variables.bgGlass};
+  border: 1px solid ${variables.borderGlass};
+  border-radius: ${variables.radiusMd};
+  color: ${variables.textPrimary};
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: border-color ${variables.transition}, background ${variables.transition},
+    transform ${variables.transition};
 
-    h1 {
-        font-size: 2.3rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        @media (max-width: 768px) {
-            font-size: 1.9rem;
-        }
-    }
-
-    h3 {
-        color: #ffbebe;
-        font-weight: 400;
-        margin-bottom: 1rem;
-    }
-
-    p {
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-        color: #f0eaea;
-    }
-`;
-
-export const Button = styled.a`
-    background-color: ${variables.colorHeader};
-    color: #fff;
-    border: none;
-    padding: 0.9rem 2rem;
-    border-radius: 40px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    transition: all 0.3s;
-    width: 245px;
-    text-align: center;
-    margin-right: 10px;
-    text-transform: uppercase;
-    @media (max-width: 768px) {
-        margin-bottom: 20px;
-    }
-
-    &:hover {
-        background-color: #ff6b6b;
-        transform: translateY(-3px);
-    }
+  &:hover {
+    border-color: ${variables.purplePrimary};
+    background: ${variables.bgGlassHover};
+    transform: translateY(-2px);
+  }
 `;
