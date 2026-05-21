@@ -5,8 +5,14 @@ import {
   useState,
   type ReactNode,
 } from "react";
-
-type Theme = "dark" | "light";
+import {
+  applyTheme,
+  getInitialTheme,
+  getStoredTheme,
+  getSystemTheme,
+  persistTheme,
+  type Theme,
+} from "../utils/theme";
 
 interface ThemeContextValue {
   theme: Theme;
@@ -15,24 +21,29 @@ interface ThemeContextValue {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
-const STORAGE_KEY = "portfolio-theme";
-
-function getInitialTheme(): Theme {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "light" || stored === "dark") return stored;
-  return "dark";
-}
-
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem(STORAGE_KEY, theme);
+    applyTheme(theme);
   }, [theme]);
 
+  useEffect(() => {
+    if (getStoredTheme()) return;
+
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = () => setTheme(getSystemTheme());
+
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    setTheme((prev) => {
+      const next: Theme = prev === "dark" ? "light" : "dark";
+      persistTheme(next);
+      return next;
+    });
   };
 
   return (
