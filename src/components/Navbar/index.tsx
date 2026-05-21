@@ -55,7 +55,7 @@ export default function Navbar() {
 
         <S.NavActions>
           <S.ResumeButton
-            href="/atual-cv.pdf"
+            href="/cv-atual-bru.pdf"
             download
             target="_blank"
             rel="noopener noreferrer"
