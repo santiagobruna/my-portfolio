@@ -23,12 +23,21 @@ const AboutSection = () => {
             <S.AboutText>
               Atuo como Desenvolvedora Full Stack Jr na{" "}
               <strong>Tardis Tecnologia</strong>, criando e mantendo aplicações web e mobile
-              com React, Next.js, React Native, Node.js e PostgreSQL — do front-end ao back-end.
+              com React, Next.js, React Native, Node.js e PostgreSQL do front-end ao back-end.
             </S.AboutText>
             <S.AboutText>
-              Já passei por experiências em plataformas de cupons (MeuCupom.com) e em gestão
-              administrativa, o que reforçou minha organização, comunicação e foco em entregar
-              soluções com impacto real.
+              Já passei por experiências em plataformas de cupons e em gestão administrativa, o que
+              reforçou minha organização, comunicação e foco em entregar soluções com impacto real.
+            </S.AboutText>
+            <S.AboutText>
+              Tenho familiaridade com criação de interfaces modernas, consumo de APIs, modelagem de
+              dados, prototipação de telas e desenvolvimento de experiências responsivas focadas no
+              usuário.
+            </S.AboutText>
+            <S.AboutText>
+              Atualmente, estou me especializando em Engenharia de Software, aprofundando
+              conhecimentos em arquitetura de sistemas, boas práticas de desenvolvimento e
+              construção de aplicações escaláveis.
             </S.AboutText>
             <S.AboutButton href="#contact">
               <FiUser size={18} />

@@ -8,7 +8,7 @@ const experiences = [
     role: "Desenvolvedora Full Stack Jr",
     company: "Tardis Tecnologia",
     description:
-      "Desenvolvimento e manutenção de aplicações web e mobile com React, Next.js, React Native (Expo), Node.js, NestJS, Prisma e PostgreSQL. Criação de interfaces, APIs, integrações, autenticação JWT e modelagem de banco de dados. Manutenção em produção, correção de bugs e evolução de funcionalidades.",
+      "Desenvolvimento full stack de apps corporativos (Shield, Rota App, Grupo Coruja) com React Native, Next.js, NestJS, Prisma e PostgreSQL. Dashboards, APIs, JWT, modelagem de dados e suporte a sistemas em produção.",
   },
   {
     period: "Jun 2025 — Nov 2025",

@@ -20,15 +20,19 @@ export const Title = styled.h3`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1rem;
 
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   @media (max-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 `;
 
@@ -67,8 +71,10 @@ export const IconWrapper = styled.div`
 `;
 
 export const SkillName = styled.span`
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 500;
   color: ${variables.textSecondary};
   text-align: center;
+  line-height: 1.2;
+  padding: 0 0.2rem;
 `;

@@ -1,19 +1,16 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
-import projectData from "../../constants/Projects/projectsData";
-import { Highlight, SectionLabel, SectionTitle } from "../../style/Shared";
+import { motion } from "framer-motion";
+import { FiGrid } from "react-icons/fi";
+import projectData, {
+  featuredProjects,
+  projectsSubtitle,
+} from "../../constants/Projects/projectsData";
+import ProjectCarousel from "./ProjectCarousel";
 import * as S from "./Styled";
 
-const VISIBLE = 3;
-
 export default function Projects() {
-  const [page, setPage] = useState(0);
-  const totalPages = Math.ceil(projectData.length / VISIBLE);
-  const visibleProjects = projectData.slice(
-    page * VISIBLE,
-    page * VISIBLE + VISIBLE
-  );
+  const [showAll, setShowAll] = useState(false);
+  const projects = showAll ? projectData : featuredProjects;
 
   return (
     <S.Container id="projects">
@@ -25,76 +22,27 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           <S.Header>
-            <div>
-              <SectionLabel>Portfólio</SectionLabel>
-              <SectionTitle>
-                Alguns <Highlight>projetos</Highlight>
-              </SectionTitle>
-            </div>
-            <S.ViewAllLink
-              href="https://github.com/santiagobruna"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ver todos os projetos →
-            </S.ViewAllLink>
+            <S.LabelRow>
+              <FiGrid size={14} />
+              Projetos
+            </S.LabelRow>
+            <S.Title>
+              Projetos em <span>destaque</span>
+            </S.Title>
+            <S.Subtitle>{projectsSubtitle}</S.Subtitle>
           </S.Header>
 
-          <S.Carousel>
-            <AnimatePresence mode="wait">
-              <S.Track
-                key={page}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.35 }}
-              >
-                {visibleProjects.map((project) => (
-                  <S.CardSlot key={project.title}>
-                    <S.ProjectCard>
-                      <S.ImageWrapper>
-                        <S.Thumbnail
-                          src={project.image}
-                          alt={project.title}
-                          loading="lazy"
-                        />
-                        {(project.demo || project.repo) && (
-                          <S.ExternalLink
-                            href={project.demo ?? project.repo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`Abrir ${project.title}`}
-                          >
-                            <FiArrowUpRight size={18} />
-                          </S.ExternalLink>
-                        )}
-                      </S.ImageWrapper>
-                      <S.Content>
-                        <S.ProjectTitle>{project.title}</S.ProjectTitle>
-                        <S.Description>{project.description}</S.Description>
-                        <S.TechList>
-                          {project.technologies.slice(0, 3).map((tech) => (
-                            <S.Tech key={tech}>{tech}</S.Tech>
-                          ))}
-                        </S.TechList>
-                      </S.Content>
-                    </S.ProjectCard>
-                  </S.CardSlot>
-                ))}
-              </S.Track>
-            </AnimatePresence>
-          </S.Carousel>
+          <ProjectCarousel key={showAll ? "all" : "featured"} projects={projects} />
 
-          <S.Dots>
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <S.Dot
-                key={i}
-                $active={page === i}
-                onClick={() => setPage(i)}
-                aria-label={`Página ${i + 1}`}
-              />
-            ))}
-          </S.Dots>
+          <S.FooterActions>
+            <S.ViewAllButton
+              type="button"
+              onClick={() => setShowAll((prev) => !prev)}
+            >
+              <FiGrid size={18} />
+              {showAll ? "Ver projetos em destaque" : "Ver todos os projetos"}
+            </S.ViewAllButton>
+          </S.FooterActions>
         </motion.div>
       </S.Inner>
     </S.Container>
