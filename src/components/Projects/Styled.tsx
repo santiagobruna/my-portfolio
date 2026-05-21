@@ -154,17 +154,18 @@ export const ProjectCard = styled.article`
   min-width: 0;
   max-width: 100%;
   box-sizing: border-box;
-  background: rgba(17, 17, 20, 0.85);
+  background: var(--project-card-bg);
   border: 1px solid ${variables.borderGlass};
   border-radius: ${variables.radiusXl};
   padding: 1.35rem 1.25rem 1.25rem;
   overflow: hidden;
+  box-shadow: var(--shadow-card);
   transition: border-color ${variables.transition}, box-shadow ${variables.transition},
     transform ${variables.transition};
 
   &:hover {
     border-color: rgba(139, 92, 246, 0.35);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    box-shadow: var(--project-card-hover-shadow);
     transform: translateY(-4px);
   }
 
@@ -215,9 +216,14 @@ export const Description = styled.p`
 export const MockupWrap = styled.div`
   margin: 0.75rem 0 1rem;
   width: 100%;
+  height: 176px;
+  min-height: 176px;
+  max-height: 176px;
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 
 export const TechList = styled.div`
@@ -232,8 +238,8 @@ export const Tech = styled.span`
   align-items: center;
   gap: 0.3rem;
   padding: 0.3rem 0.55rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid ${variables.borderGlass};
+  background: var(--tech-pill-bg);
+  border: 1px solid var(--tech-pill-border);
   border-radius: 6px;
   font-size: 0.65rem;
   font-weight: 500;
@@ -242,6 +248,7 @@ export const Tech = styled.span`
   svg {
     font-size: 0.75rem;
     flex-shrink: 0;
+    color: inherit;
   }
 `;
 

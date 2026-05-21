@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import type { Project } from "../../constants/Projects/projectsData";
 import DeviceMockup from "./DeviceMockup";
-import { getTechIcon } from "./techIcons";
+import { useTheme } from "../../context/ThemeContext";
+import { getTechIcon, getTechIconColor } from "./techIcons";
 import * as S from "./Styled";
 
 interface ProjectCardItemProps {
@@ -11,6 +12,7 @@ interface ProjectCardItemProps {
 }
 
 export default function ProjectCardItem({ project, index = 0 }: ProjectCardItemProps) {
+  const { theme } = useTheme();
   const Icon = project.icon;
   const detailsHref = project.demo ?? project.repo ?? "#contact";
   const showDetails = Boolean(project.demo || project.repo || project.featured);
@@ -45,7 +47,7 @@ export default function ProjectCardItem({ project, index = 0 }: ProjectCardItemP
           const TechIcon = getTechIcon(tech);
           return (
             <S.Tech key={tech}>
-              <TechIcon />
+              <TechIcon color={getTechIconColor(tech, theme)} />
               {tech}
             </S.Tech>
           );

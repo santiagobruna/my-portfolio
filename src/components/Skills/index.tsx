@@ -1,9 +1,20 @@
 import { motion } from "framer-motion";
 import skillsData from "../../constants/Skills/skillsData";
+import { useTheme } from "../../context/ThemeContext";
 import { Highlight } from "../../style/Shared";
 import * as S from "./Styled";
 
+function getSkillIconColor(
+  skill: (typeof skillsData)[number],
+  theme: "dark" | "light"
+) {
+  if (theme === "light" && skill.lightColor) return skill.lightColor;
+  return skill.color;
+}
+
 export default function Skills() {
+  const { theme } = useTheme();
+
   return (
     <motion.div
       id="skills"
@@ -17,12 +28,17 @@ export default function Skills() {
           Minhas <Highlight>Skills</Highlight>
         </S.Title>
         <S.Grid>
-          {skillsData.map((skill) => (
-            <S.SkillCard key={skill.name}>
-              <S.IconWrapper>{skill.icon}</S.IconWrapper>
-              <S.SkillName>{skill.name}</S.SkillName>
-            </S.SkillCard>
-          ))}
+          {skillsData.map((skill) => {
+            const Icon = skill.Icon;
+            return (
+              <S.SkillCard key={skill.name}>
+                <S.IconWrapper>
+                  <Icon color={getSkillIconColor(skill, theme)} />
+                </S.IconWrapper>
+                <S.SkillName>{skill.name}</S.SkillName>
+              </S.SkillCard>
+            );
+          })}
         </S.Grid>
       </S.Container>
     </motion.div>

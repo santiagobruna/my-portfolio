@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
+const MOCKUP_HEIGHT = "176px";
+const MOCKUP_DEVICE_MAX_WIDTH = "268px";
+
 export const MockupStage = styled.div`
   width: 100%;
-  min-height: 200px;
+  height: ${MOCKUP_HEIGHT};
+  max-height: ${MOCKUP_HEIGHT};
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.25rem 0;
+  padding: 0;
+  overflow: hidden;
   background: radial-gradient(
     ellipse 80% 70% at 50% 50%,
     rgba(139, 92, 246, 0.08) 0%,
@@ -16,39 +21,43 @@ export const MockupStage = styled.div`
 
 export const StageImage = styled.img`
   max-width: 100%;
-  max-height: 200px;
+  max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
   display: block;
   margin: 0 auto;
-  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(var(--mockup-drop));
 `;
 
 export const LaptopFrame = styled.div`
   width: 100%;
-  max-width: 100%;
+  max-width: ${MOCKUP_DEVICE_MAX_WIDTH};
+  height: 100%;
+  max-height: ${MOCKUP_HEIGHT};
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 
 export const LaptopScreen = styled.div`
   width: 100%;
-  max-width: 100%;
   aspect-ratio: 16 / 10;
+  max-height: calc(${MOCKUP_HEIGHT} - 13px);
+  flex-shrink: 0;
   background: #0c0c0e;
   border: 2px solid #2a2a32;
   border-radius: 10px 10px 4px 4px;
   overflow: hidden;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--mockup-shadow);
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: contain;
+    object-position: center center;
     display: block;
     margin: 0 auto;
   }
@@ -66,8 +75,9 @@ export const LaptopBase = styled.div`
 export const PhonesStack = styled.div`
   position: relative;
   width: 100%;
-  max-width: 280px;
-  height: 200px;
+  max-width: 240px;
+  height: 100%;
+  max-height: ${MOCKUP_HEIGHT};
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -87,18 +97,18 @@ export const PhoneFrame = styled.div<{
     $offset !== undefined
       ? `translateX(-50%) rotate(${$tilt ?? 0}deg) scale(${$scale ?? 1})`
       : `rotate(${$tilt ?? 0}deg) scale(${$scale ?? 1})`};
-  width: 112px;
-  max-width: 42%;
-  height: 210px;
-  max-height: 200px;
+  width: 96px;
+  max-width: 38%;
+  height: 168px;
+  max-height: 100%;
   margin: 0 auto;
   background: linear-gradient(145deg, #1c1c22, #121216);
   border: 2px solid #3a3a48;
-  border-radius: 24px;
-  padding: 10px 7px 12px;
+  border-radius: 22px;
+  padding: 8px 6px 10px;
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.04),
-    0 16px 36px rgba(0, 0, 0, 0.55);
+    0 12px 28px rgba(0, 0, 0, 0.45);
   opacity: ${({ $opacity }) => $opacity ?? 1};
   z-index: ${({ $z }) => $z ?? 1};
   display: flex;
@@ -107,9 +117,9 @@ export const PhoneFrame = styled.div<{
   &::before {
     content: "";
     flex-shrink: 0;
-    width: 44px;
-    height: 5px;
-    margin: 0 auto 8px;
+    width: 40px;
+    height: 4px;
+    margin: 0 auto 6px;
     background: #0a0a0c;
     border-radius: 4px;
   }
@@ -119,7 +129,7 @@ export const PhoneScreen = styled.div`
   flex: 1;
   min-height: 0;
   width: 100%;
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
   background: #000;
 
@@ -135,19 +145,24 @@ export const PhoneScreen = styled.div`
 
 export const DesktopFrame = styled.div`
   width: 100%;
-  max-width: 100%;
+  max-width: ${MOCKUP_DEVICE_MAX_WIDTH};
+  height: 100%;
+  max-height: ${MOCKUP_HEIGHT};
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   background: #141418;
   border: 2px solid #2a2a32;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--mockup-shadow);
 `;
 
 export const DesktopBar = styled.div`
   display: flex;
   gap: 5px;
   padding: 8px 10px;
+  flex-shrink: 0;
   background: #1a1a1f;
   border-bottom: 1px solid #2a2a32;
 
@@ -170,15 +185,16 @@ export const DesktopBar = styled.div`
 `;
 
 export const DesktopScreen = styled.div`
-  height: 160px;
+  flex: 1;
+  min-height: 0;
   background: #0c0c0e;
   overflow: hidden;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: contain;
+    object-position: center center;
     display: block;
     margin: 0 auto;
   }

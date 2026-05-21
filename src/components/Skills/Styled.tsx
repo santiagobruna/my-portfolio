@@ -47,14 +47,16 @@ export const SkillCard = styled.div`
   border: 1px solid ${variables.borderGlass};
   border-radius: ${variables.radiusMd};
   padding: 1rem 0.5rem;
+  box-shadow: var(--skill-card-shadow);
   transition: transform ${variables.transition}, border-color ${variables.transition},
-    box-shadow ${variables.transition};
+    box-shadow ${variables.transition}, background ${variables.transition};
   cursor: default;
 
   &:hover {
     transform: translateY(-6px);
     border-color: ${variables.purplePrimary};
-    box-shadow: 0 8px 24px ${variables.purpleGlow};
+    box-shadow: var(--skill-card-shadow), 0 8px 24px ${variables.purpleGlow};
+    background: ${variables.bgGlassHover};
   }
 `;
 
